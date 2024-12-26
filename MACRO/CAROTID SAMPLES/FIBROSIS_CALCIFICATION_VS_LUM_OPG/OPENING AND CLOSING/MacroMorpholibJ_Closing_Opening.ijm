@@ -1,0 +1,11 @@
+ori=getTitle;
+ori=getImageID();
+run("Morphological Filters", "operation=Closing element=Disk radius=10");
+closing=getImageID();
+run("Morphological Filters", "operation=Opening element=Disk radius=10");
+opening=getImageID();
+selectImage(closing);
+close();
+selectImage(ori);
+close();
+selectImage(opening);
